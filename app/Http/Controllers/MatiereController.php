@@ -11,8 +11,7 @@ class MatiereController extends Controller
     public function showMatiere()
     {
         // Retrieve all matieres from the database
-        $matieres = Matiere::all();
-
+        $matieres = Matiere::paginate(10);
         return view('matiere')->with('matieres', $matieres);
     }
 

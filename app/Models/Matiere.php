@@ -16,9 +16,9 @@ class Matiere extends Model
 
     public $incrementing = false; // Set to false if 'code' is not an auto-incrementing integer
 
-    public $timestamps = false; // Disable timestamps if not used in the table
 
     protected $fillable = [
+        'id',
         'code',
         'libelle',
         'coef',

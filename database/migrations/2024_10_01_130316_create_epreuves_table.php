@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->integer('numero');
             $table->date('date');
-            $table->integer('lieu');
+            $table->string('lieu');
             $table->timestamps();
         });
     }

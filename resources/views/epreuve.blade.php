@@ -30,6 +30,14 @@
             @endforeach
         </tbody>
     </table>
+        <!-- Pagination Links -->
+<div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Page navigation">
+        <div>
+            {{ $epreuves->links('pagination::bootstrap-4') }}  <!-- Use Bootstrap 4 pagination template -->
+        </div>
+    </nav>
+</div>
 </div>
 
 @endsection

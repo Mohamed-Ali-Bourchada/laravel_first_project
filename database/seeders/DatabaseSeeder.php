@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\MatiereSeeder;
+use Database\Seeders\EpreuveSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // Seed Matiere records first to ensure Epreuve can reference them
+        $this->call(MatiereSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Then seed Epreuve records, which will reference Matiere
+        $this->call(EpreuveSeeder::class);
     }
 }

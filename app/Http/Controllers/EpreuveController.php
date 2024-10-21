@@ -10,7 +10,7 @@ class EpreuveController extends Controller
 {
     public function showEpreuve()
     {
-        $epreuves = Epreuve::with('matiere')->get();
+$epreuves = Epreuve::with('matiere')->paginate(10); // Adjust the number (10) to the number of items per page you want
 
         return view('epreuve')->with('epreuves', $epreuves);
     }
